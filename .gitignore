@@ -1,0 +1,5 @@
+/roll
+/dice-mcp
+*.test
+*.out
+coverage.txt
