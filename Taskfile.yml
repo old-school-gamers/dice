@@ -1,0 +1,105 @@
+version: '3'
+
+vars:
+  ROLL_BIN: roll
+  MCP_BIN: dice-mcp
+
+tasks:
+  default:
+    desc: Show available tasks
+    cmds:
+      - task --list
+
+  build:
+    desc: Build both binaries into the working directory
+    deps: [build:roll, build:mcp]
+
+  build:roll:
+    desc: Build the roll CLI
+    cmds:
+      - go build -o {{.ROLL_BIN}} ./cmd/roll
+
+  build:mcp:
+    desc: Build the dice-mcp server
+    cmds:
+      - go build -o {{.MCP_BIN}} ./cmd/dice-mcp
+
+  install:
+    desc: Install both binaries via 'go install'
+    deps: [install:roll, install:mcp]
+
+  install:roll:
+    desc: Install the roll CLI to $GOBIN (or $GOPATH/bin)
+    cmds:
+      - go install ./cmd/roll
+
+  install:mcp:
+    desc: Install the dice-mcp server to $GOBIN (or $GOPATH/bin)
+    cmds:
+      - go install ./cmd/dice-mcp
+
+  register-mcp:
+    desc: Register dice-mcp with Claude Code at user scope (runs install:mcp first)
+    deps: [install:mcp]
+    cmds:
+      - |
+        bin="$(go env GOBIN)"
+        if [ -z "$bin" ]; then bin="$(go env GOPATH)/bin"; fi
+        claude mcp add dice -s user -- "$bin/{{.MCP_BIN}}"
+
+  test:
+    desc: Run tests with race detector
+    cmds:
+      - go test -race -count=1 ./...
+
+  test:coverage:
+    desc: Run tests and emit an HTML coverage report
+    cmds:
+      - go test -coverprofile=coverage.out ./...
+      - go tool cover -html=coverage.out -o coverage.html
+      - echo "coverage at coverage.html"
+
+  vet:
+    desc: Run go vet
+    cmds:
+      - go vet ./...
+
+  fmt:
+    desc: Check formatting with gofmt
+    cmds:
+      - |
+        unformatted=$(gofmt -l .)
+        if [ -n "$unformatted" ]; then
+          echo "Unformatted files:"
+          echo "$unformatted"
+          exit 1
+        fi
+
+  fmt:fix:
+    desc: Apply gofmt
+    cmds:
+      - gofmt -w .
+
+  lint:
+    desc: Run golangci-lint
+    cmds:
+      - golangci-lint run ./...
+
+  vulncheck:
+    desc: Run govulncheck
+    cmds:
+      - govulncheck ./...
+
+  check:
+    desc: Run CI checks (test, vet, fmt, lint, vulncheck)
+    cmds:
+      - task: test
+      - task: vet
+      - task: fmt
+      - task: lint
+      - task: vulncheck
+
+  clean:
+    desc: Remove build artifacts
+    cmds:
+      - rm -f {{.ROLL_BIN}} {{.MCP_BIN}} coverage.out coverage.html
