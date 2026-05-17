@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/oldschoolgamers/dice"
+	"github.com/old-school-gamers/dice"
 )
 
 // fixedRoller returns predetermined die values in order. It panics in tests

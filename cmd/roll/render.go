@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/oldschoolgamers/dice"
+	"github.com/old-school-gamers/dice"
 )
 
 // Render writes a human-readable representation of res to w.

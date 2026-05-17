@@ -1,4 +1,4 @@
-module github.com/oldschoolgamers/dice
+module github.com/old-school-gamers/dice
 
 go 1.25.10
 

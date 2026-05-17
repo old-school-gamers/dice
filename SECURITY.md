@@ -9,7 +9,7 @@ open a public issue or pull request for security problems.
 A maintainer will acknowledge your report and coordinate a fix and
 disclosure timeline with you.
 
-[gh-pvr]: https://github.com/oldschoolgamers/dice/security/advisories/new
+[gh-pvr]: https://github.com/old-school-gamers/dice/security/advisories/new
 
 ## Supported Versions
 

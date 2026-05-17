@@ -1,8 +1,8 @@
 # dice
 
-[![CI](https://github.com/oldschoolgamers/dice/actions/workflows/ci.yml/badge.svg)](https://github.com/oldschoolgamers/dice/actions/workflows/ci.yml)
-[![Go Reference](https://pkg.go.dev/badge/github.com/oldschoolgamers/dice.svg)](https://pkg.go.dev/github.com/oldschoolgamers/dice)
-[![Go Report Card](https://goreportcard.com/badge/github.com/oldschoolgamers/dice)](https://goreportcard.com/report/github.com/oldschoolgamers/dice)
+[![CI](https://github.com/old-school-gamers/dice/actions/workflows/ci.yml/badge.svg)](https://github.com/old-school-gamers/dice/actions/workflows/ci.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/old-school-gamers/dice.svg)](https://pkg.go.dev/github.com/old-school-gamers/dice)
+[![Go Report Card](https://goreportcard.com/badge/github.com/old-school-gamers/dice)](https://goreportcard.com/report/github.com/old-school-gamers/dice)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
 Tabletop RPG dice roller for Go: a library, a `roll` CLI, and a `dice-mcp`
@@ -30,8 +30,8 @@ task register-mcp    # install:mcp + register with Claude Code at user scope
 Without `task`:
 
 ```sh
-go install github.com/oldschoolgamers/dice/cmd/roll@latest
-go install github.com/oldschoolgamers/dice/cmd/dice-mcp@latest
+go install github.com/old-school-gamers/dice/cmd/roll@latest
+go install github.com/old-school-gamers/dice/cmd/dice-mcp@latest
 ```
 
 ## Notation
@@ -71,7 +71,7 @@ adv(1d20)+5 >= 15      attack with advantage against AC 15
 ## Library
 
 ```go
-import "github.com/oldschoolgamers/dice"
+import "github.com/old-school-gamers/dice"
 
 res, err := dice.Roll("2d6+3")
 fmt.Println(res.Total)        // e.g. 9

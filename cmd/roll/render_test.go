@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/oldschoolgamers/dice"
+	"github.com/old-school-gamers/dice"
 )
 
 // fixedRoller mirrors the helper in the library tests; we avoid importing

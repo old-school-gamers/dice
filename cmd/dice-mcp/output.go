@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/oldschoolgamers/dice"
+	"github.com/old-school-gamers/dice"
 )
 
 // RollOutput is the structured response returned for a successful roll tool call.

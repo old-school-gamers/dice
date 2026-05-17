@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/oldschoolgamers/dice"
+	"github.com/old-school-gamers/dice"
 )
 
 type fixedRoller struct {

@@ -47,4 +47,4 @@ Bugs and feature requests: open a [GitHub issue][issues].
 Security vulnerabilities: see [SECURITY.md](SECURITY.md). Don't open
 public issues for security problems.
 
-[issues]: https://github.com/oldschoolgamers/dice/issues
+[issues]: https://github.com/old-school-gamers/dice/issues

@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/oldschoolgamers/dice"
+	"github.com/old-school-gamers/dice"
 )
 
 func TestExplode_OnMax(t *testing.T) {

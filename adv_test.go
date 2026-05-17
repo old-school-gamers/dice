@@ -3,7 +3,7 @@ package dice_test
 import (
 	"testing"
 
-	"github.com/oldschoolgamers/dice"
+	"github.com/old-school-gamers/dice"
 )
 
 func TestAdvantage(t *testing.T) {
