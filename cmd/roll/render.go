@@ -13,22 +13,22 @@ import (
 func Render(w io.Writer, color bool, res *dice.Result) {
 	c := palette(color)
 
-	fmt.Fprintf(w, "%s = %s", res.Expression, c.total(res))
+	_, _ = fmt.Fprintf(w, "%s = %s", res.Expression, c.total(res))
 	if res.Target != nil {
 		if res.Hit {
-			fmt.Fprintf(w, " %sHIT%s", c.green+c.bold, c.reset)
+			_, _ = fmt.Fprintf(w, " %sHIT%s", c.green+c.bold, c.reset)
 		} else {
-			fmt.Fprintf(w, " %sMISS%s", c.red+c.bold, c.reset)
+			_, _ = fmt.Fprintf(w, " %sMISS%s", c.red+c.bold, c.reset)
 		}
 	}
-	fmt.Fprintln(w)
+	_, _ = fmt.Fprintln(w)
 
 	for _, g := range res.Groups {
-		fmt.Fprintf(w, "  %s:", g.Notation)
+		_, _ = fmt.Fprintf(w, "  %s:", g.Notation)
 		for _, d := range g.Dice {
-			fmt.Fprintf(w, " %s", c.die(d))
+			_, _ = fmt.Fprintf(w, " %s", c.die(d))
 		}
-		fmt.Fprintln(w)
+		_, _ = fmt.Fprintln(w)
 	}
 }
 
