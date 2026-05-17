@@ -1,5 +1,10 @@
 # dice
 
+[![CI](https://github.com/oldschoolgamers/dice/actions/workflows/ci.yml/badge.svg)](https://github.com/oldschoolgamers/dice/actions/workflows/ci.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/oldschoolgamers/dice.svg)](https://pkg.go.dev/github.com/oldschoolgamers/dice)
+[![Go Report Card](https://goreportcard.com/badge/github.com/oldschoolgamers/dice)](https://goreportcard.com/report/github.com/oldschoolgamers/dice)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+
 Tabletop RPG dice roller for Go: a library, a `roll` CLI, and a `dice-mcp`
 server for use with Claude Code or any MCP client.
 
@@ -114,3 +119,10 @@ task check      # test + vet + fmt + lint + vulncheck
 task build      # produce ./roll and ./dice-mcp without installing
 task clean
 ```
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the contribution guide and
+[SECURITY.md](SECURITY.md) for vulnerability reporting.
+
+## License
+
+Apache-2.0 — see [LICENSE](LICENSE).
