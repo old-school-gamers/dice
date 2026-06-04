@@ -1,6 +1,6 @@
 module github.com/old-school-gamers/dice
 
-go 1.25.10
+go 1.25.11
 
 require github.com/modelcontextprotocol/go-sdk v1.5.0
 
